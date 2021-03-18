@@ -150,13 +150,13 @@ void AudioManager::playRandomMusic(bool continueIfPlaying)
 
 	std::vector<std::string> musics;
 	
-	// check in RetroPie music directory
+	// check in storage music directory
 	if(musics.empty())
-		getMusicIn(Utils::FileSystem::getHomePath() + "/RetroPie/roms/music", musics);
+		getMusicIn("/storage/music/emulationstation", musics);
   
 	// check in system sound directory
 	if(musics.empty())
-		getMusicIn("/usr/share/RetroPie/music", musics);
+		getMusicIn("/usr/share/emulationstation/music", musics);
   
 	// check in .emulationstation/music directory
 	if(musics.empty())
